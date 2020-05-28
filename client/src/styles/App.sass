@@ -1,0 +1,54 @@
+body
+  font-family: 'IBM Plex Sans', sans-serif
+
+.containerPadding
+  padding: 0 3vw
+
+#home
+  height: 75vh
+  background-image: url('../images/shoppingWoman.jpg')
+  background-repeat: no-repeat
+  background-size: cover
+  .homeNavigation
+    position: absolute
+    right: 0
+    top: 20%
+    background-color: white
+    opacity: 0.7
+    font-size: 1.1rem
+    ul
+      margin: 0
+      padding: 0
+      text-align: center
+    li
+      display: inline-block
+      padding: 15px 10px
+    a
+      padding: inherit
+      color: black
+      &:hover
+        opacity: 0.6
+
+.navbar-colors
+  & a
+    color: black
+
+.dropdown-2-col
+  min-width: 600px
+
+.position-center
+  left: -50%
+  transform: translate(-10%)
+
+.position-inherited
+  position: inherit
+
+
+@media only screen and (max-width: 576px)
+  .containerPadding
+    padding: 0
+  .dropdown-2-col
+    min-width: 0
+  .position-center
+    left: 0
+    transform: translate(0%)

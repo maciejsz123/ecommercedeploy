@@ -1,0 +1,39 @@
+.grid-fav
+  display: grid
+  grid-template-areas: 'image name name addToCart' 'image size size addToCart' 'image color color button' 'image price price button'
+  align-items: left
+  & > div:nth-child(1)
+    grid-area: image
+    justify-self: left
+    &>img
+      height: 150px
+  & > div:nth-child(2)
+    grid-area: name
+    justify-self: left
+    margin-left: 10px
+  & > div:nth-child(3)
+    grid-area: size
+    justify-self: left
+    margin-left: 10px
+  & > div:nth-child(4)
+    grid-area: color
+    justify-self: left
+    margin-left: 10px
+  & > div:nth-child(5)
+    grid-area: price
+    justify-self: left
+    margin-left: 10px
+  & > div:nth-child(6)
+    grid-area: addToCart
+    justify-self: center
+  & > div:nth-child(7)
+    grid-area: button
+    justify-self: center
+
+@media only screen and (min-width: 576px)
+  .grid-fav
+    grid-template-areas: "image name price addToCart" "image size color button"
+
+@media only screen and (min-width: 992px)
+  .grid-fav
+    grid-template-areas: "image name price size color addToCart button"

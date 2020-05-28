@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css?family=Muli&display=swap')
+$font-Muli: 'Muli', sans-serif
+@import url('https://fonts.googleapis.com/css?family=Vollkorn&display=swap')
+$font-Volkorn: 'Vollkorn', serif
+
+$imageHeight: 200px
+$imageMargin: 5px
+
+.font-Muli
+  font-family: $font-Muli
+
+.font-Volkorn
+  font-family: $font-Volkorn
+
+.black-outline-text
+  text-shadow: 1px 0 0 grey, 0 -1px 0 grey, 0 1px 0 grey, -1px 0 0 grey
+
+.linear-gradient-pink
+  background: linear-gradient(transparent 20%, #fecfef 20%, #ff9a9e 50%)
+
+.bg-beige
+  background-color: beige
+  margin-bottom: 5px
+
+.text-align-dependent
+  text-align: center
+
+#popular-items
+  display: grid
+  grid-template-areas: 'discount accesories' 'discount hat' 'tshirt hat' 'tshirt shoe' 'shirt trousers'
+  height: auto
+  justify-content: center
+  & > div
+    height: calc(#{$imageHeight} - #{$imageMargin})
+    width: $imageHeight
+    margin: $imageMargin
+    max-width: 45vw
+    & > img
+      height: 100%
+      width: 100%
+
+#popular-accesories
+  grid-area: accesories
+
+#popular-discount
+  grid-area: discount
+  height: calc(#{$imageHeight} * 2) !important
+
+#popular-hat
+  grid-area: hat
+  height: calc(#{$imageHeight} * 2) !important
+
+#popular-shirt
+  grid-area: shirt
+
+#popular-shoe
+  grid-area: shoe
+
+#popular-trousers
+  grid-area: trousers
+
+#popular-tshirt
+  grid-area: tshirt
+  height: calc(#{$imageHeight} * 2) !important
+
+#brand-items
+  & > div
+    margin: $imageMargin
+    height: $imageHeight
+    width: $imageHeight
+    & > img
+      width: 100%
+      height: 100%
+
+@media only screen and (min-width: '768px')
+  .text-align-dependent
+    text-align: left
+
+  .center-element-verically
+    top: 50%
+    transform: translate(0, -50%)
+    position: absolute
+
+  .bg-beige
+    margin-bottom: 0px
+
+  #popular-items
+    grid-template-areas: 'discount accesories hat' 'discount tshirt hat' 'shoe tshirt shirt' '. trousers .'
+
+@media only screen and (min-width: '1060px')
+  #popular-items
+    grid-template-areas: 'discount accesories hat shirt tshirt' 'discount shoe hat trousers tshirt'
+    height: calc(#{$imageHeight} * 2 - #{$imageMargin} * 2)

@@ -1,0 +1,67 @@
+$descriptionHeight: 80px
+$hoverColor: black
+
+a
+  color: black
+
+@mixin layerSize($givenWidth)
+  width: $givenWidth
+  height: 350px
+
+.itemFocus
+  cursor: pointer
+  overflow: hidden
+
+.hide-overflow
+  overflow: hidden
+
+#secondLayer
+  @include layerSize(calc(100% - #{30px}))
+  top: 0
+  background-color: transparent
+  opacity: 0
+  transition: .5s all
+  z-index: 2
+
+.itemFocus:hover #secondLayer
+  opacity: 0.5
+  background-color: $hoverColor
+
+#buttonLayer
+  opacity: 0
+  z-index: 4
+  transition: .4s all
+  @include layerSize(calc(100% - #{30px}))
+  button
+    color: red
+    &:hover
+      color: white
+      background: tomato !important
+
+.itemFocus:hover #buttonLayer
+  opacity: 1
+
+.itemFocus:hover .description
+  color: #c73268
+
+.itemFocus:hover .itemName
+  text-decoration: underline
+
+.imageSize
+  width: 100%
+  height: 350px
+  transform: scale(1)
+  transition: .4s transform
+
+.itemFocus:hover > div > .imageSize
+  transform: scale(1.15)
+
+.favoritePosition
+  right: 30px
+  bottom: $descriptionHeight + 20px
+  z-index: 5
+  &:hover
+    background-image: url('../images/favorite_added.png')
+
+.description
+  min-height: $descriptionHeight

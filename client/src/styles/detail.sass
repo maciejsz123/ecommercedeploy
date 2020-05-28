@@ -1,0 +1,59 @@
+.temporary-text-clicked
+  opacity: 1
+  transition: 1s all
+  transform: translate(0, 0)
+
+.temporary-text-notclicked
+  opacity: 0
+  transition: 1s all
+  transform: translate(0, -15px)
+
+.radio-detail
+  border: 6px solid white
+  position: relative
+  cursor: pointer
+  &:hover
+    outline: 1px solid grey
+
+.check-mark
+  border: 1px solid black
+  position: absolute
+  background: white
+  right: -7px
+  bottom: -6px
+  font-size: 13px
+
+.display
+  display: display
+
+.display-none
+  display: none
+
+.detail-position
+  justify-content: center
+  width: 100%
+  & > img
+    max-width: 350px
+
+.detail-grid
+  justify-content: center
+  display: grid
+  & .grid-detail-item
+    padding: 5px
+
+@media only screen and (min-width: 568px)
+  .detail-position
+    & > img
+      max-width: 300px
+
+  .item-description
+    width: 75%
+
+@media only screen and (min-width: 768px)
+  .detail-position
+    justify-content: right
+    & > img
+      max-width: 350px
+  .detail-grid
+    justify-content: left
+    align-self: start

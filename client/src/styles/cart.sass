@@ -1,0 +1,59 @@
+.cart-total
+  display: flex
+  flex-flow: column
+  & > div
+    justify-self: center
+    text-align: center
+    padding: 1rem 0
+  hr
+    width: 90%
+
+.cart-color
+  padding: 6px
+  border-radius: 100%
+  display: inline-block
+
+.grid-cart
+  display: grid
+  grid-template-areas: "image name button" "image size button" "image color button" "image price button"
+  align-items: center
+  & > div:nth-child(1)
+    grid-area: image
+    justify-self: left
+    &>img
+      height: 150px
+  & > div:nth-child(2)
+    grid-area: name
+    justify-self: left
+    margin-left: 10px
+  & > div:nth-child(3)
+    grid-area: size
+    justify-self: left
+    margin-left: 10px
+  & > div:nth-child(4)
+    grid-area: color
+    justify-self: left
+    margin-left: 10px
+  & > div:nth-child(5)
+    grid-area: price
+    justify-self: left
+    margin-left: 10px
+  & > div:nth-child(6)
+    grid-area: button
+
+@media only screen and (min-width: 576px)
+  .grid-cart
+    grid-template-areas: "image name price button" "image size color button"
+    & > div:nth-child(n)
+      justify-self: center
+
+
+@media only screen and (min-width: 768px)
+  .full-screen-height-cart
+    height: calc(100vh - #{114px})
+    overflow-y: auto
+    overflow-x: hidden
+
+@media only screen and (min-width: 992px)
+  .grid-cart
+    grid-template-areas: "image name price size color button"
